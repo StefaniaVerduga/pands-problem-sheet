@@ -331,7 +331,7 @@ Finally, the plot is displayed using Matplotlib's show() function.
 ```
 plt.show()
 ```
-![HISTOGRAM AND PLOT](/Users/stefania/Pands/pands-problem-sheet/Figure_1.png)
+![HISTOGRAM AND PLOT](https://github.com/StefaniaVerduga/pands-problem-sheet/blob/main/Figure_1.png)
 
 #### References
 - Numpy in Python: [https://www.w3schools.com/python/numpy/numpy_getting_started.asp#:~:text=NumPy%20as%20np,referring%20to%20the%20same%20thing.&text=Now%20the%20NumPy%20package%20can,as%20np%20instead%20of%20numpy%20.]
