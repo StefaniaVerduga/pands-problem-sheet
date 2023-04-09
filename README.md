@@ -9,18 +9,18 @@ The "pands-problem-sheet" repository contains the solutions of different weekly 
 ## Table of Contents
 
 
-1. [Week 01: helloworld.py](#week-01:-helloworld.py)
-2. [Week 02: bank.py](#week-02:-bank.py)
-3. [Week 03: accounts.py](#week-03:-accounts.py)
-4. [Week 04: collatz.py](#week-04:-collatz.py)
-5. [Week 05: weekday.py](#week-05:-weekday.py)
-6. [Week 06: squareroot.py](#week-06:-squareroot.py)
-7. [Week 07: countE.py](#week-07:-countE.py)
-8. [Week 08: plottask.py](#week-08:-plottask.py) 
+1. [Week 01 - helloworld.py](#week-01---helloworld.py)
+2. [Week 02 - bank.py](#week-02---bank.py)
+3. [Week 03 - accounts.py](#week-03---accounts.py)
+4. [Week 04 - collatz.py](#week-04---collatz.py)
+5. [Week 05 - weekday.py](#week-05---weekday.py)
+6. [Week 06 - squareroot.py](#week-06---squareroot.py)
+7. [Week 07 - countE.py](#week-07---countE.py)
+8. [Week 08 - plottask.py](#week-08---plottask.py) 
 
 ___
 
-## Week 01: helloworld.py
+## Week 01 - helloworld.py
 #### Task description
 
 This program is a simple program that prints the message "Hello World" to the console or terminal.
@@ -34,7 +34,7 @@ The "print()" function is a built-in function in Python that outputs the specifi
 
 ___
 
-## Week 02: bank.py
+## Week 02 - bank.py
 #### Task description
 
 This program prompts the user to enter two amounts in cents and then converts them to euros by dividing by 100. The sum of the two amounts in euros is then printed using a formatted string.
@@ -61,7 +61,7 @@ print(f"The sum of these is: €{n1eur + n2eur}")
 
 ___
 
-## Week 03: accounts.py
+## Week 03 - accounts.py
 #### Task description
 
 This program reads in a 10 character account number and outputs the account number with only the last 4 digits being visible.
@@ -73,6 +73,7 @@ The following line prompts the user to enter a 10-digit account number and reads
 account_num = input("Please enter an account number: ")
 ```
 In the next block of code, the program calculates the length of the account number using the len() function and stores it in the variable "num_digits".
+
 A new variable "new_account_num" is created by concatenating the appropriate number of Xs (i.e., the length of the original account number minus 4) and the last 4 digits of the original account number. This is done using the * operator to create a string of Xs of the appropriate length, and the [-4:] slice notation to extract the last 4 digits of the original account number.
 ```
 num_digits = len(account_num)
@@ -91,7 +92,7 @@ print(new_account_num)
 ___
 
 
-## Week 04: collatz.py
+## Week 04 - collatz.py
 #### Task description
 
 This program asks the user to input any positive integer and outputs the value, following the criteria: if the input is even, it will be divided by two but, if it is odd, it will be multiplied by three and added one. The program will end if the current value is one.
@@ -104,6 +105,7 @@ number = int(input("Please, enter a positive integer: "))
 ```
 It then enters a while loop that runs as long as the value of 'number' is not equal to 1.
 Within the loop, the current value of 'number' is printed to the screen using the 'print' function. The 'end' parameter is set to a space character, which means that each printed value will be separated by a space.
+
 Next, an if-else statement checks if the value of 'number' is even by checking if the remainder of 'number' divided by 2 is zero. If it is even, then the value of 'number' is divided by 2 using integer division (//) and the result is assigned back to 'number'. If it is odd, then the value of 'number' is multiplied by 3 and then added to 1, and the result is assigned back to 'number'.
 ```
 while number != 1:
@@ -126,7 +128,7 @@ print(number)
 ___
 
 
-## Week 05: weekday.py
+## Week 05 - weekday.py
 #### Task description
 
 This is a Python program that uses the datetime module to get the current date and time and check whether it is a weekday or the weekend. 
@@ -139,6 +141,7 @@ import datetime
 x = datetime.datetime.now()
 ```
 The program uses the weekday() method of the "datetime" object "x" to determine which day of the week it is. This method returns an integer between 0 (Monday) and 6 (Sunday), representing the day of the week.
+
 The program checks whether the day of the week is less than 5 (i.e., Monday to Friday), using the "if" statement. If it is, the program prints the string "Yes, unfortunately today is a weekday." to the console. Otherwise, the program prints the string "It is the weekend, yay!" to the console.
 ```
 if x.weekday() < 5:
@@ -156,7 +159,7 @@ else:
 ___
 
 
-## Week 06: squareroot.py
+## Week 06 - squareroot.py
 #### Task description
 
 This program takes a positive floating-point number as input and outputs an approximation of its square root.
@@ -202,7 +205,7 @@ print(f"The square root of {num} is approx. {sqrt(num)}")
 ___
 
 
-## Week 07: countE.py
+## Week 07 - countE.py
 #### Task description
 
 This program reads a file specified in the command-line argument, and counts the number of occurrences of the letter 'e' or 'E' in the file.
@@ -246,7 +249,7 @@ print(count)
 ___
 
 
-## Week 08: plottask.py
+## Week 08 - plottask.py
 #### Task description
 
 This program displays: a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2; and a plot of the function h(x)=x^3 in the range [0, 10].
@@ -275,6 +278,7 @@ data = np.random.normal(mean, std_dev, 1000)
 ```
 It then creates a figure and axes object using Matplotlib's subplots() function. 
 The plt.subplots() method returns a tuple containing a figure object and an array of axes objects. The figure object is the top-level container for all the plot elements, while each axes object represents an individual plot within the figure.
+
 - "fig" is a variable that stores the figure object.
 - "ax" is a variable that stores the axes object.
 - In this case, the plt.subplots() method is called with no arguments, which creates a single subplot.
@@ -282,6 +286,7 @@ The plt.subplots() method returns a tuple containing a figure object and an arra
 fig, ax = plt.subplots()
 ```
 A histogram is created using Matplotlib's hist() function on the generated data, with the number of bins set to 15, alpha value set to 0.5, and label set to 'Normal Distribution'.
+
 The ax variable is an instance of the Matplotlib Axes class, which represents the drawing area for a single plot. The ax.hist() method takes the following parameters:
 
 x: The data to be plotted.
@@ -290,15 +295,19 @@ alpha: The transparency level of the bars in the histogram.
 label: The label for the histogram in the legend.
 
 In the context of the Matplotlib hist() function, bins refers to the number of bins or intervals in which the data is divided for creating the histogram.
+
 In this program, bins=15 means that the histogram will be divided into 15 equally spaced bins or intervals. Increasing the number of bins can make the histogram more detailed and help reveal patterns in the data, while decreasing the number of bins can make the histogram more general and easier to read.
+
 In the context of the hist() function, alpha refers to the transparency of the bars in the histogram. The alpha value can range from 0 to 1, where 0 means completely transparent and 1 means completely opaque.
 In this program, alpha=0.5 means that the bars in the histogram will be semi-transparent, which can help to distinguish overlapping bars and make the plot more visually appealing.
 ```
 ax.hist(data, bins=15, alpha=0.5, label='Normal Distribution')
 ```
 A plot of the function x^3 is created using Matplotlib's plot() function on an array of x values created using NumPy's linspace() function, with the label set to 'x^3'.
+
 The linspace() function creates an array of evenly spaced numbers over a specified interval. In this case, the function is called with the arguments (0, 10, 100), which creates an array of 100 numbers between 0 and 10 (inclusive).
 The program uses the generated x values to create a y array for a cubic function. The ** operator is used to raise each x value to the power of 3, generating a cubic function.
+
 Then, the program adds a line plot of the x and y arrays to the existing histogram using the ax.plot() method. The ax.plot() method takes the x and y arrays as the first and second arguments, respectively.
 The "color" parameter sets the color of the line to red, while the "linewidth" parameter sets the width of the line to 2. The "label" parameter sets the label of the line in the legend to 'x^3'.
 ```
@@ -322,7 +331,7 @@ Finally, the plot is displayed using Matplotlib's show() function.
 ```
 plt.show()
 ```
-![HISTOGRAM AND PLOT](/Users/stefania/Pands/Figure_1.png)
+![HISTOGRAM AND PLOT](/Users/stefania/Pands/pands-problem-sheet/Figure_1.png)
 
 #### References
 - Numpy in Python: [https://www.w3schools.com/python/numpy/numpy_getting_started.asp#:~:text=NumPy%20as%20np,referring%20to%20the%20same%20thing.&text=Now%20the%20NumPy%20package%20can,as%20np%20instead%20of%20numpy%20.]
