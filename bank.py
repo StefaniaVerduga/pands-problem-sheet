@@ -4,6 +4,9 @@
 
 n1 = int(input("Enter amount 1 (in cent): "))
 n2 = int(input("Enter amount 2 (in cent): "))
-n1eur = n1 / 100
-n2eur = n2 / 100
-print(f"The sum of these is: €{n1eur + n2eur}")
+
+total_cent = n1 + n2
+total_eur = total_cent // 100  # integer division
+total_cent = total_cent % 100  # remainder after integer division
+
+print(f"The sum of these is: €{total_eur}.{total_cent:02d}")
