@@ -37,7 +37,7 @@ ___
 ## Week 02 - bank.py
 #### Task description
 
-This program prompts the user to enter two amounts in cents and then converts them to euros by dividing by 100. The sum of the two amounts in euros is then printed using a formatted string.
+This program prompts the user to enter two amounts in cents and then converts them to euros and cents using integer division ('//') and the remainder operator ('%'). The sum of the two amounts is then printed using a formatted string.
 
 #### Program explanation
 
@@ -46,18 +46,24 @@ This lines, prompts the user to enter two amounts in cents and reads them as inp
 n1 = int(input("Enter amount 1 (in cent): "))
 n2 = int(input("Enter amount 2 (in cent): "))
 ```
-The next lines, converts the inputs from cents to euros by dividing it by 100 and assigns the results to new variables called "n1eur" and "n2eur".
+The next block of code, adds the two amounts together to get the total amount in cents, and stores it in a variable called "total_cent".
+The total amount in cents is divided by 100 using the integer division "//", giving the total number of euros which is stored in a variable called total_eur.
+Then, the remainder operator ("%") is used to get the remaining cents after integer division by 100, which is stored in the same variable "total_cent". This ensures that we only have the cents left over after we've accounted for all the euros.
 ```
-n1eur = n1 / 100
-n2eur = n2 / 100
+total_cent = n1 + n2
+total_eur = total_cent // 100
+total_cent = total_cent % 100
 ```
-Finally, the result of the two amounts in euro is printed, using a formatted string.
+Finally, the program uses an f-string to print the total amount in euros and cents. The format specifier :02d is used to ensure that the number of cents is printed with leading zeroes if necessary, so that it always has two digits.
 ```
-print(f"The sum of these is: €{n1eur + n2eur}")
+print(f"The sum of these is: €{total_eur}.{total_cent:02d}")
 ```
 
 #### References
 - String format: [https://realpython.com/python-f-strings/]
+- Integer division and remainder operator: [https://www.geeksforgeeks.org/python-operators/]
+- Formatted print: [https://www.myfaqbase.com/q0000418-Scripting-Python-Examples-How-to-do-formatted-print.html]
+
 
 ___
 
@@ -170,20 +176,20 @@ The program prompts the user to enter a positive number using the input() functi
 ```
 num = float(input("Please, enter a positive number: "))
 ```
-The program defines a function called "sqrt" that takes one argument "num".
+The program defines a function called "sqrt" that takes the argument "num" and the argument "tolerance", which is set to 0.0001 by default. This is the tolerance level used to determine when the approximation is close enough to the actual square root.
 
 The "sqrt" function checks if the input number "num" is zero, and returns 0 if it is using the if statement.
-If the input number is not zero, the "sqrt" function calculates the approximate square root of the input number using the Babylonian method (Babylonian method for square root is derived from the Newton-Raphson method). The Babylonian method involves taking an initial guess (in this case, "approx = num / 2") and then iteratively refining the guess using the formula "(approx + num / approx) / 2".
+If the input number is not zero, the "sqrt" function calculates the approximate square root of the input number using the Babylonian method (Babylonian method for square root is derived from the Newton-Raphson method). The Babylonian method involves taking an initial approximation "approx" to "num/2: and a variable "g" to "approx+1".
 
 The "sqrt" function uses a "while" loop to refine the guess until the guess and the previous guess are within a certain tolerance of each other. In this case, the program compares the current guess with the previous guess and continues iterating until they are equal, which indicates that the approximation has converged.
 ```
-def sqrt(num):
+def sqrt(num, tolerance=0.0001):
     if num == 0:
         return 0
 
     approx = num / 2
     g = approx + 1
-    while(approx != g):
+    while(abs(approx - g) > tolerance):
         n = num / approx
         g = approx
         approx = (approx + n) / 2
