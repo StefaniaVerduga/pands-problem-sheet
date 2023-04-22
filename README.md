@@ -222,6 +222,13 @@ We need to import the sys module, which provides access to some variables and fu
 ```
 import sys
 ```
+If the user forgets to enter the argument when running the program, a "IndexError" exception will be raised, since "sys.argv" is a list that includes the name of the script being run as its first element, and any additional command line arguments as subsequent elements.
+To avoid this error, the program could first check the length of sys.argv and print a message prompting the user to provide the required filename argument and then exit the program using the "sys.exit()" function.
+```
+if len(sys.argv) < 2: 
+    print("Please provide a filename argument.")
+    sys.exit()
+```
 The variable argv allows us to access command-line arguments.
 ```
 filename = sys.argv[1]
