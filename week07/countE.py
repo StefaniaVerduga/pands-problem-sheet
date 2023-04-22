@@ -7,16 +7,15 @@
 # and functions that interact with the Python interpreter.
 import sys
 
-# The variable argv allows us to access command-line arguments.
-filename = sys.argv[1]
+if len(sys.argv) < 2: 
+    print("Please provide a filename argument.")
+    sys.exit()  # function to exit the program in case no argument is entered
 
-# This block of code allows us to open the specified file by 'filename'
-# in read-only mode.
+filename = sys.argv[1]  # variable argv allows us to access command-line arguments
+
 with open(filename, 'r') as file:
     content = file.read()
 
-# We use the variable count to keep track of the number of 'e' characters found in the file.
-# And increment count variable by one for each 'e' or 'E' found in the file.
 count = 0
 for char in content:
     if char == 'e' or char == 'E':
