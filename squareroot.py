@@ -6,16 +6,13 @@
 num = float(input("Please, enter a positive number: "))
 
 # The function sqrt checks if the input number is zero, and returns 0 if it is.
-def sqrt(num):
+def sqrt(num, tolerance=0.0001):
     if num == 0:
         return 0
 
-# If the input is different to 0, it calculates the approximate value for the square root,
-# by dividing the input number by 2 and aplying a mathematical formula.
-# This formula involves taking the average of the current approximate value and the input number divided by the current approximate value.
     approx = num / 2
     g = approx + 1
-    while(approx != g):
+    while(abs(approx - g) > tolerance):
         n = num / approx
         g = approx
         approx = (approx + n) / 2
