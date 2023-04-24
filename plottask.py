@@ -15,7 +15,7 @@ data = np.random.normal(mean, std_dev, 1000)
 # Create a figure and axes object
 fig, ax = plt.subplots()
 
-# Create histogram
+# Histogram
 ax.hist(data, bins=15, alpha=0.5, label='Normal Distribution')
 
 # Create plot of x^3
@@ -23,13 +23,8 @@ x = np.linspace(0, 10, 100)
 y = x**3
 ax.plot(x, y, color='red', linewidth=2, label='x^3')
 
-# Set plot title and labels
 ax.set_title('Histogram and plot')
 ax.set_xlabel('Value')
 ax.set_ylabel('Frequency')
-
-# Add legend
 ax.legend()
-
-# Show plot
 plt.show()
